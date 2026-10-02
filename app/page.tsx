@@ -2,13 +2,18 @@ import Link from "next/link";
 import { cards } from "@/lib/cards";
 
 const categories = [
-  { title: "Cashback", text: "For everyday spending and online purchases", icon: "₹" },
-  { title: "Travel", text: "For miles, travel rewards and lounge benefits", icon: "✈" },
-  { title: "Shopping", text: "For shopping rewards and partner benefits", icon: "▣" },
-  { title: "Fuel", text: "For fuel spending and commuting", icon: "⛽" },
+  { title: "Cashback", text: "For everyday spending and online purchases", icon: "₹", href: "/categories/cashback" },
+  { title: "Travel", text: "For miles, travel rewards and lounge benefits", icon: "✈", href: "/categories/travel" },
+  { title: "Shopping", text: "For shopping rewards and partner benefits", icon: "▣", href: "/categories/shopping" },
+  { title: "Fuel", text: "For fuel spending and commuting", icon: "⛽", href: "/categories/fuel" },
 ];
 
-const banks = ["HDFC Bank", "SBI Card", "ICICI Bank", "Axis Bank"];
+const banks = [
+  { name: "HDFC Bank", href: "/banks/hdfc-bank" },
+  { name: "SBI Card", href: "/banks/sbi-card" },
+  { name: "ICICI Bank", href: "/banks/icici-bank" },
+  { name: "Axis Bank", href: "/banks/axis-bank" }
+];
 
 export default function Home() {
   const featured = cards[0];
@@ -70,7 +75,7 @@ export default function Home() {
           </div>
           <div className="benefit-grid">
             {categories.map((item) => (
-              <Link href="/credit-cards" className="benefit-item" key={item.title}>
+              <Link href="/credit-cards" className="benefit-item" key={item.title} href={item.href}>
                 <span className="benefit-icon">{item.icon}</span>
                 <div><strong>{item.title} cards</strong><small>{item.text}</small></div>
                 <b>›</b>
@@ -121,8 +126,8 @@ export default function Home() {
           </div>
           <div className="bank-grid">
             {banks.map((bank) => (
-              <Link href="/credit-cards" className="bank-link" key={bank}>
-                <span>{bank.slice(0, 2).toUpperCase()}</span><strong>{bank}</strong><b>›</b>
+              <Link href={bank.href} className="bank-link" key={bank.name}>
+                <span>{bank.name.slice(0, 2).toUpperCase()}</span><strong>{bank.name}</strong><b>›</b>
               </Link>
             ))}
           </div>
