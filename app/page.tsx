@@ -76,7 +76,7 @@ export default function Home() {
           </div>
           <div className="benefit-grid">
             {categories.map((item) => (
-              <Link href="/credit-cards" className="benefit-item" key={item.title} href={item.href}>
+              <Link href={item.href} className="benefit-item" key={item.title}>
                 <span className="benefit-icon">{item.icon}</span>
                 <div><strong>{item.title} cards</strong><small>{item.text}</small></div>
                 <b>›</b>
