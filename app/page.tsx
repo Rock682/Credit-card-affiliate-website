@@ -27,6 +27,7 @@ export default function Home() {
             <h1>Find a credit card that fits your <span>spending needs.</span></h1>
             <p>Explore card features, fees and benefits in simple language, then visit the relevant application page when you are ready.</p>
             <div className="hero-cta-row">
+              <Link href="/find-my-card" className="primary-cta">Find my card →</Link>
               <Link href="/credit-cards" className="primary-cta">Explore credit cards</Link>
               <Link href="/compare" className="secondary-cta">Compare cards</Link>
             </div>
@@ -143,6 +144,7 @@ export default function Home() {
           </div>
           <div className="guide-links">
             <Link href="/guides"><strong>Read credit-card guides</strong><small>Understand fees, rewards and terminology</small><b>→</b></Link>
+            <Link href="/tools/cashback-calculator"><strong>Calculate potential cashback</strong><small>Estimate monthly cashback from your spending</small><b>→</b></Link>
             <Link href="/compare"><strong>Compare card details</strong><small>Review important features side by side</small><b>→</b></Link>
           </div>
         </div>
