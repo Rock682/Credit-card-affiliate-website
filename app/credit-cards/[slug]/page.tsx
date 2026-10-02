@@ -32,6 +32,13 @@ export default async function CardPage({
 
   if (!card) notFound();
 
+  const faqItems = [
+    { q: "What is the annual fee?", a: card.annualFee },
+    { q: "Who is this card best for?", a: card.bestFor + "." },
+    { q: "How do I apply?", a: "Use the application button to review the current issuer offer. Approval is decided by the issuer." },
+    { q: "Can the card terms change?", a: "Yes. Fees, rewards, eligibility and benefits can change. Check the issuer source before applying." }
+  ];
+
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "FinancialProduct",
@@ -54,14 +61,6 @@ export default async function CardPage({
     }))
   };
 
-
-
-const faqItems = [
-  { q: "What is the annual fee?", a: card.annualFee },
-  { q: "Who is this card best for?", a: card.bestFor + "." },
-  { q: "How do I apply?", a: "Use the application button to review the current issuer offer. Approval is decided by the issuer." },
-  { q: "Can the card terms change?", a: "Yes. Fees, rewards, eligibility and benefits can change. Check the issuer source before applying." }
-];
   const applyUrl = card.affiliateUrl || card.applicationUrl;
   const isAffiliate = Boolean(card.affiliateUrl);
 
