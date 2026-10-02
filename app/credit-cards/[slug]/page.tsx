@@ -41,9 +41,18 @@ export default async function CardPage({
       "@type": "Organization",
       name: card.issuer
     },
-    url: card.applicationUrl
+    url: card.applicationUrl,
+    mainEntity: faqItems.map((item) => ({ "@type": "Question", name: item.q, acceptedAnswer: { "@type": "Answer", text: item.a } }))
   };
 
+
+
+const faqItems = [
+  { q: "What is the annual fee?", a: card.annualFee },
+  { q: "Who is this card best for?", a: card.bestFor + "." },
+  { q: "How do I apply?", a: "Use the application button to review the current issuer offer. Approval is decided by the issuer." },
+  { q: "Can the card terms change?", a: "Yes. Fees, rewards, eligibility and benefits can change. Check the issuer source before applying." }
+];
   const applyUrl = card.affiliateUrl || card.applicationUrl;
   const isAffiliate = Boolean(card.affiliateUrl);
 
@@ -97,6 +106,18 @@ export default async function CardPage({
               <p>{card.eligibility}</p>
             </section>
 
+
+            <section className="detail-section">
+              <h2>Frequently asked questions</h2>
+              <div className="faq-list">
+                {faqItems.map((item) => (
+                  <details className="faq-item" key={item.q}>
+                    <summary>{item.q}</summary>
+                    <p>{item.a}</p>
+                  </details>
+                ))}
+              </div>
+            </section>
             <section className="detail-source-box">
               <div>
                 <strong>Source & verification</strong>
