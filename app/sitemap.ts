@@ -20,6 +20,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/banks/sbi-card",
     "/banks/icici-bank",
     "/banks/axis-bank",
+    "/banks/hsbc",
     "/guides/how-credit-card-fees-work",
     "/guides/cashback-credit-cards-guide",
     "/guides/travel-credit-cards-guide",
