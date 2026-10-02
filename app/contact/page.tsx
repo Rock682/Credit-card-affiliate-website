@@ -1,0 +1,1 @@
+export const metadata={title:"Contact"};export default function Contact(){return <section className="container" style={{padding:"48px 0",maxWidth:850}}><h1>Contact</h1><p>For corrections, partnership enquiries or website feedback, please use the business contact details published on this website.</p></section>}
