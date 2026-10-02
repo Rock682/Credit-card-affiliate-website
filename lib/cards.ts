@@ -25,6 +25,36 @@ export type CreditCard = {
 
 export const cards: CreditCard[] = [
   {
+    slug: "hsbc-platinum",
+    name: "HSBC Platinum Credit Card",
+    issuer: "HSBC India",
+    bank: "HSBC",
+    category: "Travel & Lifestyle",
+    bestFor: "Rewards, travel and lifestyle spending",
+    annualFee: "No joining or annual fee",
+    joiningFee: "No joining fee",
+    renewalWaiver: "No annual/renewal fee.",
+    reward: "2 reward points for every ₹150 spent, with up to 6X reward points on eligible hotels, flights and car rentals through Travel with Points.",
+    welcomeBenefit: "Current HSBC offers include 2,000 reward points after the stated qualifying spend and app-login condition, a 3-month Swiggy One membership, an eligible voucher of up to ₹500, and a ₹250 Amazon eGift Card for qualifying online applications.",
+    keyBenefits: [
+      "No joining or annual fee.",
+      "Convert reward points to air miles with participating airline partners.",
+      "Up to 6X reward points on eligible hotels, flights and car rentals through Travel with Points.",
+      "Complimentary 12-month Times Prime subscription, subject to the applicable terms.",
+      "Complimentary domestic flight seat selection twice a year on eligible MakeMyTrip bookings.",
+      "Eligible contactless fuel purchases can earn ₹250 cashback per quarter, with a fuel surcharge waiver subject to the stated monthly limits."
+    ],
+    eligibility: "HSBC states that salaried applicants must be 18–65 years old with minimum annual income of ₹6 lakh; self-employed applicants must be 25–65 with minimum annual income of ₹12 lakh. Applicants must be Indian residents living in eligible cities listed by HSBC.",
+    forexFee: "Check the current HSBC fee schedule and card terms before international use.",
+    loungeAccess: "Airport lounge access is not listed among the highlighted benefits on HSBC's current Visa Platinum product page; verify the current terms if lounge access is important to you.",
+    description: "A lifetime-free HSBC card focused on everyday rewards, travel-point transfers and lifestyle benefits.",
+    affiliateUrl: "https://bitli.in/jzpU9gR",
+    applicationUrl: "https://www.hsbc.co.in/credit-cards/products/visa-platinum/",
+    sourceUrl: "https://www.hsbc.co.in/credit-cards/products/visa-platinum/",
+    lastVerified: "2 October 2026",
+    isLifetimeFree: true
+  },
+  {
     slug: "hdfc-regalia-gold",
     name: "HDFC Bank Regalia Gold Credit Card",
     issuer: "HDFC Bank",
