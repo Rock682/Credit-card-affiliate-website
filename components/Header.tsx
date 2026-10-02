@@ -1,1 +1,17 @@
-import Link from "next/link";export default function Header(){return <header style={{background:"#fff",borderBottom:"1px solid #e4e7ec",position:"sticky",top:0,zIndex:20}}><div className="container" style={{display:"flex",justifyContent:"space-between",alignItems:"center",minHeight:68}}><Link href="/" style={{fontWeight:800,fontSize:20}}>CardCompare India</Link><nav style={{display:"flex",gap:18,fontSize:14}}><Link href="/credit-cards">Credit Cards</Link><Link href="/compare">Compare</Link><Link href="/guides">Guides</Link><Link href="/about">About</Link></nav></div></header>}
+import Link from "next/link";
+
+export default function Header(){
+  return (
+    <header className="site-header">
+      <div className="container header-inner">
+        <Link href="/" className="brand">CardCompare India</Link>
+        <nav className="site-nav" aria-label="Main navigation">
+          <Link href="/credit-cards">Credit Cards</Link>
+          <Link href="/compare">Compare</Link>
+          <Link href="/guides">Guides</Link>
+          <Link href="/about">About</Link>
+        </nav>
+      </div>
+    </header>
+  );
+}
