@@ -2,110 +2,127 @@ import Link from "next/link";
 import { cards } from "@/lib/cards";
 
 const categories = [
-  { icon: "↗", title: "Cashback Cards", text: "For everyday online and offline spending." },
-  { icon: "✈", title: "Travel Cards", text: "Compare travel rewards, miles and benefits." },
-  { icon: "▣", title: "Shopping Cards", text: "Cards built around shopping and brand rewards." },
-  { icon: "★", title: "Premium Cards", text: "Explore lifestyle and premium benefits." },
+  ["Cashback", "Maximise everyday spending", "↗"],
+  ["Travel", "Miles, lounge & travel rewards", "✈"],
+  ["Shopping", "Online shopping benefits", "▣"],
+  ["Fuel", "Save on fuel spends", "◉"],
 ];
 
 export default function Home() {
   return (
     <>
-      <section className="home-hero">
-        <div className="container hero-grid">
-          <div className="hero-copy">
-            <div className="eyebrow">CREDIT CARDS IN INDIA</div>
-            <h1>Find a credit card that fits the way you spend.</h1>
-            <p className="hero-text">
-              Compare cards by fees, rewards, cashback, travel benefits and more — all in one place.
-            </p>
-            <div className="hero-actions">
-              <Link className="btn hero-btn" href="/credit-cards">Explore credit cards</Link>
-              <Link className="text-link" href="/compare">Compare cards →</Link>
+      <section className="portal-hero">
+        <div className="container portal-hero-grid">
+          <div className="portal-copy">
+            <div className="eyebrow">INDIA'S CREDIT CARD GUIDE</div>
+            <h1>Compare credit cards.<br /><span>Choose with confidence.</span></h1>
+            <p>Compare fees, rewards, cashback and benefits in one place before you apply.</p>
+
+            <div className="hero-search">
+              <span>⌕</span>
+              <span className="search-placeholder">What are you looking for?</span>
+              <Link href="/credit-cards" className="search-button">Search</Link>
             </div>
-            <div className="hero-trust">
-              <span>✓ Clear fee information</span>
-              <span>✓ Easy comparisons</span>
-              <span>✓ Independent guides</span>
+
+            <div className="quick-links">
+              <span>Popular:</span>
+              <Link href="/credit-cards">Cashback cards</Link>
+              <Link href="/credit-cards">Travel cards</Link>
+              <Link href="/compare">Compare cards</Link>
             </div>
           </div>
 
-          <div className="hero-visual" aria-hidden="true">
-            <div className="hero-card hero-card-back">
-              <span>PREMIUM</span><strong>•••• 4821</strong>
+          <div className="hero-panel">
+            <div className="hero-panel-header">
+              <span>Popular right now</span>
+              <Link href="/credit-cards">View all</Link>
             </div>
-            <div className="hero-card hero-card-front">
-              <div className="card-top"><b>CardCompare</b><span>VISA</span></div>
-              <div className="card-number">•••• •••• •••• 6248</div>
-              <div className="card-bottom"><span>COMPARE</span><span>INDIA</span></div>
-            </div>
-            <div className="floating-stat"><strong>100+</strong><span>cards to explore</span></div>
+            {cards.slice(0, 2).map((card, index) => (
+              <Link href={"/credit-cards/" + card.slug} className="mini-card" key={card.slug}>
+                <div className={"mini-card-art art-" + index}>
+                  <span>{card.bank.split(" ")[0]}</span>
+                  <b>VISA</b>
+                </div>
+                <div className="mini-card-info">
+                  <strong>{card.name}</strong>
+                  <span>{card.category}</span>
+                  <small>{card.annualFee}</small>
+                </div>
+                <span className="mini-arrow">›</span>
+              </Link>
+            ))}
+            <Link href="/compare" className="compare-box">
+              <span>⇄</span>
+              <div><strong>Compare multiple cards</strong><small>See fees and benefits side by side</small></div>
+              <b>›</b>
+            </Link>
           </div>
         </div>
       </section>
 
-      <section className="category-section">
+      <section className="trust-bar">
+        <div className="container trust-items">
+          <span><b>✓</b> Fee information</span>
+          <span><b>✓</b> Reward details</span>
+          <span><b>✓</b> Comparison tools</span>
+          <span><b>✓</b> Helpful guides</span>
+        </div>
+      </section>
+
+      <section className="portal-section">
         <div className="container">
-          <div className="section-heading">
-            <div>
-              <p className="section-kicker">START HERE</p>
-              <h2>What type of card are you looking for?</h2>
-            </div>
-            <Link className="text-link" href="/credit-cards">View all cards →</Link>
+          <div className="portal-heading">
+            <div><span className="section-label">BROWSE BY NEED</span><h2>Find a card for your lifestyle</h2></div>
+            <Link href="/credit-cards">See all cards →</Link>
           </div>
-          <div className="category-grid">
-            {categories.map((category) => (
-              <Link href="/credit-cards" className="category-card" key={category.title}>
-                <span className="category-icon">{category.icon}</span>
-                <h3>{category.title}</h3>
-                <p>{category.text}</p>
-                <span className="category-arrow">Explore →</span>
+          <div className="need-grid">
+            {categories.map(([title, text, icon]) => (
+              <Link href="/credit-cards" className="need-card" key={title}>
+                <span className="need-icon">{icon}</span>
+                <div><h3>{title}</h3><p>{text}</p></div>
+                <span className="need-arrow">→</span>
               </Link>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="featured-section">
+      <section className="cards-section">
         <div className="container">
-          <div className="section-heading">
-            <div>
-              <p className="section-kicker">FEATURED</p>
-              <h2>Cards worth comparing</h2>
-              <p className="muted">Review fees and benefits before making an application decision.</p>
-            </div>
-            <Link className="text-link" href="/compare">Open comparison →</Link>
+          <div className="portal-heading">
+            <div><span className="section-label">FEATURED CARDS</span><h2>Explore popular credit cards</h2></div>
+            <Link href="/credit-cards">View all →</Link>
           </div>
-          <div className="featured-grid">
+          <div className="card-showcase">
             {cards.map((card) => (
-              <article className="featured-card" key={card.slug}>
-                <div className="featured-card-top">
-                  <div className="bank-badge">{card.bank.slice(0, 2).toUpperCase()}</div>
-                  <span className="pill">{card.category}</span>
+              <article className="showcase-card" key={card.slug}>
+                <div className="showcase-top">
+                  <div className="showcase-art"><span>{card.bank.split(" ")[0]}</span><b>VISA</b></div>
+                  <span className="category-tag">{card.category}</span>
                 </div>
                 <h3>{card.name}</h3>
                 <p>{card.description}</p>
-                <div className="fee-row">
-                  <div><span>Annual fee</span><strong>{card.annualFee}</strong></div>
-                  <div><span>Joining fee</span><strong>{card.joiningFee}</strong></div>
+                <div className="showcase-data">
+                  <div><small>Annual fee</small><strong>{card.annualFee}</strong></div>
+                  <div><small>Joining fee</small><strong>{card.joiningFee}</strong></div>
                 </div>
-                <Link className="btn card-btn" href={"/credit-cards/" + card.slug}>View details</Link>
+                <Link href={"/credit-cards/" + card.slug} className="outline-button">View card details</Link>
               </article>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="guide-strip">
-        <div className="container guide-grid">
+      <section className="decision-section">
+        <div className="container decision-grid">
           <div>
-            <p className="section-kicker">MAKE AN INFORMED CHOICE</p>
-            <h2>Not sure which card suits you?</h2>
-            <p>Use our comparisons and guides to understand fees, rewards, eligibility and key benefits before applying.</p>
+            <span className="section-label">BEFORE YOU APPLY</span>
+            <h2>Understand the card before you choose it.</h2>
+            <p>Use our guides and comparisons to check fees, rewards, eligibility and important terms.</p>
           </div>
-          <div className="guide-actions">
-            <Link className="btn" href="/compare">Compare cards</Link>
-            <Link className="outline-btn" href="/guides">Read guides</Link>
+          <div className="decision-links">
+            <Link href="/compare"><b>⇄</b><span><strong>Compare cards</strong><small>Put cards side by side</small></span>→</Link>
+            <Link href="/guides"><b>?</b><span><strong>Read our guides</strong><small>Learn how credit cards work</small></span>→</Link>
           </div>
         </div>
       </section>
