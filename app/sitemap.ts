@@ -22,7 +22,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/banks/axis-bank",
     "/guides/how-credit-card-fees-work",
     "/guides/cashback-credit-cards-guide",
-    "/guides/travel-credit-cards-guide"
+    "/guides/travel-credit-cards-guide",
+    "/find-my-card",
+    "/tools/cashback-calculator"
   ];
 
   return [
