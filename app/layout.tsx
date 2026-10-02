@@ -1,0 +1,3 @@
+import type {Metadata} from "next";import "./globals.css";import Header from "@/components/Header";import Footer from "@/components/Footer";
+export const metadata:Metadata={metadataBase:new URL("https://cardcompare.in"),title:{default:"Credit Card Comparison India | CardCompare India",template:"%s | CardCompare India"},description:"Compare credit cards in India by fees, rewards, cashback, travel benefits and eligibility.",robots:{index:true,follow:true}};
+export default function RootLayout({children}:{children:React.ReactNode}){return <><Header/><main>{children}</main><Footer/></>}
