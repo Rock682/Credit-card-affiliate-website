@@ -6,7 +6,8 @@ const banks = {
   "hdfc-bank": "HDFC Bank",
   "sbi-card": "SBI Card",
   "icici-bank": "ICICI Bank",
-  "axis-bank": "Axis Bank"
+  "axis-bank": "Axis Bank",
+  "hsbc": "HSBC"
 } as const;
 
 export async function generateStaticParams() {
