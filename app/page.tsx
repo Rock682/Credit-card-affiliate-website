@@ -12,7 +12,8 @@ const banks = [
   { name: "HDFC Bank", href: "/banks/hdfc-bank" },
   { name: "SBI Card", href: "/banks/sbi-card" },
   { name: "ICICI Bank", href: "/banks/icici-bank" },
-  { name: "Axis Bank", href: "/banks/axis-bank" }
+  { name: "Axis Bank", href: "/banks/axis-bank" },
+  { name: "HSBC", href: "/banks/hsbc" }
 ];
 
 export default function Home() {
