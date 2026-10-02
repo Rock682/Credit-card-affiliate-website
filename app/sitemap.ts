@@ -1,0 +1,1 @@
+import type {MetadataRoute} from "next";import {cards} from "@/lib/cards";export default function sitemap():MetadataRoute.Sitemap{const base="https://cardcompare.in";const routes=["","/credit-cards","/compare","/guides","/about","/contact","/privacy","/disclaimer"];return [...routes.map(path=>({url:base+path})),...cards.map(c=>({url:base+"/credit-cards/"+c.slug}))]}
