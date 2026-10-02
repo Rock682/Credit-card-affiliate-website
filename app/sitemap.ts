@@ -11,13 +11,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/about",
     "/contact",
     "/privacy",
-    "/disclaimer"
+    "/disclaimer",
+    "/categories/cashback",
+    "/categories/travel",
+    "/categories/shopping",
+    "/categories/fuel",
+    "/banks/hdfc-bank",
+    "/banks/sbi-card",
+    "/banks/icici-bank",
+    "/banks/axis-bank",
+    "/guides/how-credit-card-fees-work",
+    "/guides/cashback-credit-cards-guide",
+    "/guides/travel-credit-cards-guide"
   ];
 
   return [
     ...routes.map((path) => ({ url: base + path })),
-    ...cards.map((card) => ({
-      url: base + "/credit-cards/" + card.slug
-    }))
+    ...cards.map((card) => ({ url: base + "/credit-cards/" + card.slug }))
   ];
 }
