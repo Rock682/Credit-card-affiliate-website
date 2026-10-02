@@ -1,1 +1,43 @@
-import {cards} from "@/lib/cards";export const metadata={title:"Compare Credit Cards",description:"Compare selected credit cards by fees, categories and rewards."};export default function Compare(){return <section className="container" style={{padding:"48px 0"}}><h1>Compare Credit Cards</h1><p className="muted">Compare key details across the cards in our database.</p><div style={{overflowX:"auto",marginTop:24}}><table style={{width:"100%",background:"#fff",borderCollapse:"collapse"}}><thead><tr><th style={{textAlign:"left",padding:14}}>Card</th><th style={{textAlign:"left",padding:14}}>Bank</th><th style={{textAlign:"left",padding:14}}>Annual fee</th><th style={{textAlign:"left",padding:14}}>Category</th></tr></thead><tbody>{cards.map(c=><tr key={c.slug}><td style={{padding:14,borderTop:"1px solid #e4e7ec"}}>{c.name}</td><td style={{padding:14,borderTop:"1px solid #e4e7ec"}}>{c.bank}</td><td style={{padding:14,borderTop:"1px solid #e4e7ec"}}>{c.annualFee}</td><td style={{padding:14,borderTop:"1px solid #e4e7ec"}}>{c.category}</td></tr>)}</tbody></table></div></section>}
+import type { Metadata } from "next";
+import Link from "next/link";
+import { cards } from "@/lib/cards";
+
+export const metadata: Metadata = {
+  title: "Compare Credit Cards",
+  description: "Compare selected credit cards by fees, rewards, benefits and best-use cases."
+};
+
+export default function Compare() {
+  return (
+    <section className="container" style={{ padding: "48px 0 70px" }}>
+      <span className="home-label">SIDE-BY-SIDE</span>
+      <h1 style={{ fontSize: "clamp(32px,4vw,46px)", margin: "8px 0" }}>Compare credit cards</h1>
+      <p className="muted">Use the table to identify differences, then open the card page for verified details and issuer terms.</p>
+
+      <div style={{ overflowX: "auto", marginTop: 28 }}>
+        <table className="comparison-table">
+          <thead><tr>
+            <th>Card</th><th>Issuer</th><th>Annual fee</th><th>Best for</th><th>Rewards</th><th></th>
+          </tr></thead>
+          <tbody>
+            {cards.map((card) => (
+              <tr key={card.slug}>
+                <td><strong>{card.name}</strong></td>
+                <td>{card.issuer}</td>
+                <td>{card.annualFee}</td>
+                <td>{card.bestFor}</td>
+                <td>{card.reward}</td>
+                <td><Link href={"/credit-cards/" + card.slug} className="details-link">Details →</Link></td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <div className="affiliate-disclosure" style={{ marginTop: 24, border: "1px solid var(--border)", borderRadius: 12, padding: 18 }}>
+        <strong>How to use this comparison</strong>
+        <p>There is no single card that suits everyone. Compare the features against your own spending, then verify current issuer terms before applying.</p>
+      </div>
+    </section>
+  );
+}
