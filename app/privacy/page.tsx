@@ -1,0 +1,1 @@
+export const metadata={title:"Privacy Policy"};export default function Privacy(){return <section className="container" style={{padding:"48px 0",maxWidth:850}}><h1>Privacy Policy</h1><p>This page will explain information collection, analytics, cookies, affiliate links and visitor choices.</p></section>}
