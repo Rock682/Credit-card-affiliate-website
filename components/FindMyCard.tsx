@@ -56,7 +56,7 @@ export default function FindMyCard() {
         <div>
           <label>What fee preference do you have?</label>
           <select value={fee} onChange={(e) => setFee(e.target.value)}>
-            <option value="any">I'm open to fees</option>
+            <option value="any">I&apos;m open to fees</option>
             <option value="free">I prefer lifetime-free</option>
             <option value="low">I prefer a lower annual fee</option>
           </select>
@@ -79,7 +79,7 @@ export default function FindMyCard() {
           <div><span className="home-label">MATCHES</span><h2>Cards to explore</h2></div>
           <span>{matches.length} listed</span>
         </div>
-        {matches.map(({ card, score }, index) => (
+        {matches.map(({ card }, index) => (
           <article className="finder-result" key={card.slug}>
             <div>
               <small>{index === 0 ? "Closest match" : "Also consider"} · {card.bank}</small>

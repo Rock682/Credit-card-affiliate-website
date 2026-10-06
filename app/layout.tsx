@@ -18,10 +18,12 @@ export default function RootLayout({
   children
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <>
-      <Header />
-      <main>{children}</main>
-      <Footer />
-    </>
+    <html lang="en-IN">
+      <body>
+        <Header />
+        <main>{children}</main>
+        <Footer />
+      </body>
+    </html>
   );
 }

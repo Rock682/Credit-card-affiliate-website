@@ -11,7 +11,7 @@ export default function FindMyCardPage() {
       <div className="finder-intro">
         <span className="home-label">CARD FINDER</span>
         <h1>Find a credit card for your spending</h1>
-        <p>Tell us what matters most. We'll filter the cards currently listed on this site using your answers.</p>
+        <p>Tell us what matters most. We&apos;ll filter the cards currently listed on this site using your answers.</p>
       </div>
       <FindMyCard />
     </section>

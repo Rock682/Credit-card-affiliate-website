@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import { cards, getCard } from "@/lib/cards";
 
@@ -70,7 +71,7 @@ export default async function CardPage({
         <div className="card-page-grid">
           <article className="card-detail-main">
             <div className="card-breadcrumb">
-              <a href="/credit-cards">Credit Cards</a> / {card.category}
+              <Link href="/credit-cards">Credit Cards</Link> / {card.category}
             </div>
 
             <div className="card-detail-header">
@@ -157,7 +158,7 @@ export default async function CardPage({
           <aside className="card-apply-panel">
             <div className="apply-panel-label">READY TO CHECK?</div>
             <h2>{card.isLifetimeFree ? "Check the current offer" : "Check eligibility & offer"}</h2>
-            <p>Review the issuer's current terms before submitting an application.</p>
+            <p>Review the issuer&apos;s current terms before submitting an application.</p>
             <a
               className="apply-button large"
               href={applyUrl}

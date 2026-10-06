@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { notFound } from "next/navigation";
 
 const guides = {
   "how-credit-card-fees-work": {
@@ -49,7 +50,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 export default async function GuidePage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const guide = guides[slug as GuideSlug];
-  if (!guide) return null;
+  if (!guide) notFound();
 
   return (
     <section className="container" style={{ padding: "48px 0 70px", maxWidth: 900 }}>

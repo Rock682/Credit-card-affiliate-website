@@ -41,7 +41,7 @@ export default function CashbackCalculator() {
           <strong>₹{result.total.toLocaleString("en-IN", { maximumFractionDigits: 2 })}</strong>
           <div><small>Online</small><b>₹{result.onlineCashback.toLocaleString("en-IN", { maximumFractionDigits: 2 })}</b></div>
           <div><small>Offline</small><b>₹{result.offlineCashback.toLocaleString("en-IN", { maximumFractionDigits: 2 })}</b></div>
-          <p>Actual rewards depend on the card's current terms, caps, exclusions and eligible transaction categories.</p>
+          <p>Actual rewards depend on the card&apos;s current terms, caps, exclusions and eligible transaction categories.</p>
         </div>
       </div>
     </section>

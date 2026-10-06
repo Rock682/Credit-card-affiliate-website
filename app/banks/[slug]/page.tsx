@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { notFound } from "next/navigation";
 import { cards } from "@/lib/cards";
 
 const banks = {
@@ -26,7 +27,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 export default async function BankPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const bank = banks[slug as keyof typeof banks];
-  if (!bank) return null;
+  if (!bank) notFound();
 
   const matching = cards.filter((card) => card.bank === bank);
 
