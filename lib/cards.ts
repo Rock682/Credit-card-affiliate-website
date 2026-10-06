@@ -1,12 +1,24 @@
+import { banks } from "@/lib/banks";
+import type { CategorySlug } from "@/lib/categories";
+
+export type CardNetwork = "Visa" | "Mastercard" | "RuPay" | "American Express" | "Diners Club";
+
 export type CreditCard = {
   slug: string;
   name: string;
   issuer: string;
   bank: string;
+  /** Display label. Use `categories` for filtering and category pages. */
   category: string;
+  categories: CategorySlug[];
+  /** Leave unset until the network has been verified with the issuer. */
+  networks?: CardNetwork[];
   bestFor: string;
   annualFee: string;
   joiningFee: string;
+  /** Fee in ₹ before taxes; 0 when there is no fee. */
+  annualFeeInr: number;
+  joiningFeeInr: number;
   renewalWaiver: string;
   reward: string;
   welcomeBenefit: string;
@@ -30,6 +42,10 @@ export const cards: CreditCard[] = [
     issuer: "HSBC India",
     bank: "HSBC",
     category: "Travel & Lifestyle",
+    categories: ["travel", "fuel"],
+    networks: ["Visa"],
+    annualFeeInr: 0,
+    joiningFeeInr: 0,
     bestFor: "Rewards, travel and lifestyle spending",
     annualFee: "No joining or annual fee",
     joiningFee: "No joining fee",
@@ -60,6 +76,9 @@ export const cards: CreditCard[] = [
     issuer: "HDFC Bank",
     bank: "HDFC Bank",
     category: "Travel & Lifestyle",
+    categories: ["travel"],
+    annualFeeInr: 2500,
+    joiningFeeInr: 2500,
     bestFor: "Travel and lifestyle spending",
     annualFee: "₹2,500 + applicable taxes",
     joiningFee: "₹2,500 + applicable taxes",
@@ -87,6 +106,9 @@ export const cards: CreditCard[] = [
     issuer: "SBI Card",
     bank: "SBI Card",
     category: "Cashback",
+    categories: ["cashback"],
+    annualFeeInr: 999,
+    joiningFeeInr: 999,
     bestFor: "Online and everyday cashback",
     annualFee: "₹999 + applicable taxes",
     joiningFee: "₹999 + applicable taxes",
@@ -113,6 +135,9 @@ export const cards: CreditCard[] = [
     issuer: "ICICI Bank",
     bank: "ICICI Bank",
     category: "Shopping & Cashback",
+    categories: ["shopping", "cashback"],
+    annualFeeInr: 0,
+    joiningFeeInr: 0,
     bestFor: "Amazon and Amazon Pay spending",
     annualFee: "No joining or annual fee",
     joiningFee: "No joining fee",
@@ -138,3 +163,12 @@ export const cards: CreditCard[] = [
 ];
 
 export const getCard = (slug: string) => cards.find((card) => card.slug === slug);
+
+export const getCardsByCategory = (slug: CategorySlug) => cards.filter((card) => card.categories.includes(slug));
+
+export const getCardsByBank = (bankName: string) => cards.filter((card) => card.bank === bankName);
+
+/** Banks that currently have at least one card listed. */
+export const banksWithCards = () => banks.filter((bank) => getCardsByBank(bank.name).length > 0);
+
+export const formatNetworks = (card: CreditCard) => card.networks?.join(" / ") ?? "";

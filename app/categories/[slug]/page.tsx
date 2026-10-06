@@ -1,49 +1,25 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { cards } from "@/lib/cards";
-
-const categories = {
-  cashback: {
-    name: "Cashback Credit Cards",
-    intro: "Explore cards designed around cashback and everyday spending. Compare the fee, reward structure and important terms before applying.",
-    description: "Cashback cards can be useful when a large part of your spending falls within eligible cashback categories. Always check exclusions, caps and statement-cycle rules."
-  },
-  travel: {
-    name: "Travel Credit Cards",
-    intro: "Explore travel-focused credit cards for rewards, airport benefits and travel-related spending.",
-    description: "Travel benefits can include reward points, airline or hotel partnerships and lounge access. Eligibility, spend thresholds and redemption rules vary by issuer."
-  },
-  shopping: {
-    name: "Shopping Credit Cards",
-    intro: "Explore cards built around shopping rewards, partner offers and online purchases.",
-    description: "Shopping rewards often depend on the merchant, payment method and offer terms. Check the issuer's current conditions before applying."
-  },
-  fuel: {
-    name: "Fuel Credit Cards",
-    intro: "Explore credit cards that can be relevant to fuel spending and commuting.",
-    description: "Fuel cards may offer surcharge waivers or rewards subject to transaction ranges, monthly limits and eligible fuel stations."
-  }
-} as const;
-
-type Slug = keyof typeof categories;
+import { getCardsByCategory } from "@/lib/cards";
+import { categories, getCategory } from "@/lib/categories";
 
 export async function generateStaticParams() {
-  return Object.keys(categories).map((slug) => ({ slug }));
+  return categories.map((category) => ({ slug: category.slug }));
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
-  const category = categories[slug as Slug];
+  const category = getCategory(slug);
   return category ? { title: category.name, description: category.intro } : {};
 }
 
 export default async function CategoryPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const category = categories[slug as Slug];
+  const category = getCategory(slug);
   if (!category) notFound();
 
-  const matching = cards.filter((card) => card.category.toLowerCase().includes(slug));
+  const matching = getCardsByCategory(category.slug);
 
   return (
     <section className="container" style={{ padding: "48px 0 70px" }}>

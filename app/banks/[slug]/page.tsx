@@ -1,42 +1,35 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { cards } from "@/lib/cards";
-
-const banks = {
-  "hdfc-bank": "HDFC Bank",
-  "sbi-card": "SBI Card",
-  "icici-bank": "ICICI Bank",
-  "axis-bank": "Axis Bank",
-  "hsbc": "HSBC"
-} as const;
+import { banks, getBank } from "@/lib/banks";
+import { getCardsByBank } from "@/lib/cards";
 
 export async function generateStaticParams() {
-  return Object.keys(banks).map((slug) => ({ slug }));
+  return banks.map((bank) => ({ slug: bank.slug }));
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
-  const bank = banks[slug as keyof typeof banks];
+  const bank = getBank(slug);
   return bank ? {
-    title: bank + " Credit Cards",
-    description: "Explore " + bank + " credit cards, fees, rewards and key benefits."
+    title: bank.name + " Credit Cards",
+    description: "Explore " + bank.name + " credit cards, fees, rewards and key benefits."
   } : {};
 }
 
 export default async function BankPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const bank = banks[slug as keyof typeof banks];
+  const bank = getBank(slug);
   if (!bank) notFound();
 
-  const matching = cards.filter((card) => card.bank === bank);
+  const matching = getCardsByBank(bank.name);
 
   return (
     <section className="container" style={{ padding: "48px 0 70px" }}>
       <span className="home-label">EXPLORE BY ISSUER</span>
-      <h1 style={{ fontSize: "clamp(32px,4vw,46px)", margin: "8px 0" }}>{bank} Credit Cards</h1>
+      <h1 style={{ fontSize: "clamp(32px,4vw,46px)", margin: "8px 0" }}>{bank.name} Credit Cards</h1>
       <p className="muted" style={{ maxWidth: 760, lineHeight: 1.7 }}>
-        Browse the {bank} cards currently covered on this website. Review the individual card page and verify current issuer terms before applying.
+        Browse the {bank.name} cards currently covered on this website. Review the individual card page and verify current issuer terms before applying.
       </p>
 
       {matching.length ? (

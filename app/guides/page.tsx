@@ -1,28 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { guides } from "@/lib/guides";
 
 export const metadata: Metadata = {
   title: "Credit Card Guides",
   description: "Practical guides explaining credit-card fees, cashback, travel rewards, eligibility and applications in India."
 };
-
-const guides = [
-  {
-    slug: "how-credit-card-fees-work",
-    title: "How credit card fees work",
-    text: "Understand joining fees, annual fees, renewal waivers and taxes before applying."
-  },
-  {
-    slug: "cashback-credit-cards-guide",
-    title: "How to evaluate cashback credit cards",
-    text: "Learn how cashback rates, exclusions, caps and statement cycles can affect your actual value."
-  },
-  {
-    slug: "travel-credit-cards-guide",
-    title: "How to evaluate travel credit cards",
-    text: "Understand reward points, lounge access, travel benefits and the terms worth checking."
-  }
-];
 
 export default function Guides() {
   return (
@@ -35,8 +18,8 @@ export default function Guides() {
       <div className="guide-links" style={{ marginTop: 28 }}>
         {guides.map((guide) => (
           <Link href={"/guides/" + guide.slug} key={guide.slug}>
-            <strong>{guide.title}</strong>
-            <small>{guide.text}</small>
+            <strong>{guide.shortTitle}</strong>
+            <small>{guide.summary}</small>
             <b>→</b>
           </Link>
         ))}

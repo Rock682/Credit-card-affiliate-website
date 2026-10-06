@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { cards } from "@/lib/cards";
+import { cards, formatNetworks } from "@/lib/cards";
 
 export const metadata: Metadata = {
   title: "Credit Cards in India",
@@ -26,7 +26,7 @@ export default async function Cards({
     return (!q || searchable.includes(q))
       && (category === "all" || card.category === category)
       && (issuer === "all" || card.issuer === issuer)
-      && (fee === "all" || (fee === "free" ? card.isLifetimeFree : !card.isLifetimeFree));
+      && (fee === "all" || (fee === "free" ? card.annualFeeInr === 0 : card.annualFeeInr > 0));
   });
 
   return (
@@ -68,7 +68,7 @@ export default async function Cards({
           {filtered.map((card) => (
             <article className="affiliate-card" key={card.slug}>
               <div className="affiliate-card-head">
-                <div className="bank-card"><span>{card.bank}</span><b>VISA</b></div>
+                <div className="bank-card"><span>{card.bank}</span><b>{formatNetworks(card)}</b></div>
                 {card.isLifetimeFree && <span className="featured-tag">LIFETIME FREE</span>}
               </div>
               <div className="affiliate-bank">{card.bank} · {card.category}</div>

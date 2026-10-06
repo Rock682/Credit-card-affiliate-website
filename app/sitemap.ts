@@ -1,8 +1,10 @@
 import type { MetadataRoute } from "next";
-import { cards } from "@/lib/cards";
+import { banksWithCards, cards } from "@/lib/cards";
+import { categories } from "@/lib/categories";
+import { guides } from "@/lib/guides";
+import { SITE_URL } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = "https://credit-card-affiliate-website-ew2g.vercel.app";
   const routes = [
     "",
     "/credit-cards",
@@ -12,24 +14,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/contact",
     "/privacy",
     "/disclaimer",
-    "/categories/cashback",
-    "/categories/travel",
-    "/categories/shopping",
-    "/categories/fuel",
-    "/banks/hdfc-bank",
-    "/banks/sbi-card",
-    "/banks/icici-bank",
-    "/banks/axis-bank",
-    "/banks/hsbc",
-    "/guides/how-credit-card-fees-work",
-    "/guides/cashback-credit-cards-guide",
-    "/guides/travel-credit-cards-guide",
     "/find-my-card",
-    "/tools/cashback-calculator"
+    "/tools/cashback-calculator",
+    ...categories.map((category) => "/categories/" + category.slug),
+    ...banksWithCards().map((bank) => "/banks/" + bank.slug),
+    ...guides.map((guide) => "/guides/" + guide.slug),
+    ...cards.map((card) => "/credit-cards/" + card.slug)
   ];
 
-  return [
-    ...routes.map((path) => ({ url: base + path })),
-    ...cards.map((card) => ({ url: base + "/credit-cards/" + card.slug }))
-  ];
+  return routes.map((path) => ({ url: SITE_URL + path }));
 }

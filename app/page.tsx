@@ -1,23 +1,10 @@
 import Link from "next/link";
-import { cards } from "@/lib/cards";
-
-const categories = [
-  { title: "Cashback", text: "For everyday spending and online purchases", icon: "₹", href: "/categories/cashback" },
-  { title: "Travel", text: "For miles, travel rewards and lounge benefits", icon: "✈", href: "/categories/travel" },
-  { title: "Shopping", text: "For shopping rewards and partner benefits", icon: "▣", href: "/categories/shopping" },
-  { title: "Fuel", text: "For fuel spending and commuting", icon: "⛽", href: "/categories/fuel" },
-];
-
-const banks = [
-  { name: "HDFC Bank", href: "/banks/hdfc-bank" },
-  { name: "SBI Card", href: "/banks/sbi-card" },
-  { name: "ICICI Bank", href: "/banks/icici-bank" },
-  { name: "Axis Bank", href: "/banks/axis-bank" },
-  { name: "HSBC", href: "/banks/hsbc" }
-];
+import { banksWithCards, cards, formatNetworks } from "@/lib/cards";
+import { categories } from "@/lib/categories";
 
 export default function Home() {
   const featured = cards[0];
+  const banks = banksWithCards();
 
   return (
     <>
@@ -43,7 +30,7 @@ export default function Home() {
             <div className="offer-hero-card">
               <div className="offer-label">FEATURED CARD</div>
               <div className="offer-card-art">
-                <span>{featured.bank}</span><b>VISA</b>
+                <span>{featured.bank}</span><b>{formatNetworks(featured)}</b>
               </div>
               <div className="offer-card-content">
                 <small>{featured.category}</small>
@@ -77,9 +64,9 @@ export default function Home() {
           </div>
           <div className="benefit-grid">
             {categories.map((item) => (
-              <Link href={item.href} className="benefit-item" key={item.title}>
+              <Link href={"/categories/" + item.slug} className="benefit-item" key={item.slug}>
                 <span className="benefit-icon">{item.icon}</span>
-                <div><strong>{item.title} cards</strong><small>{item.text}</small></div>
+                <div><strong>{item.label} cards</strong><small>{item.summary}</small></div>
                 <b>›</b>
               </Link>
             ))}
@@ -102,7 +89,7 @@ export default function Home() {
             {cards.map((card, index) => (
               <article className="affiliate-card" key={card.slug}>
                 <div className="affiliate-card-head">
-                  <div className={"bank-card bank-" + index}><span>{card.bank}</span><b>VISA</b></div>
+                  <div className={"bank-card bank-" + index}><span>{card.bank}</span><b>{formatNetworks(card)}</b></div>
                   {index === 0 && <span className="featured-tag">FEATURED</span>}
                 </div>
                 <div className="affiliate-bank">{card.bank} · {card.category}</div>
@@ -128,7 +115,7 @@ export default function Home() {
           </div>
           <div className="bank-grid">
             {banks.map((bank) => (
-              <Link href={bank.href} className="bank-link" key={bank.name}>
+              <Link href={"/banks/" + bank.slug} className="bank-link" key={bank.slug}>
                 <span>{bank.name.slice(0, 2).toUpperCase()}</span><strong>{bank.name}</strong><b>›</b>
               </Link>
             ))}
