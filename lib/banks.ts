@@ -9,7 +9,8 @@ export const banks: Bank[] = [
   { slug: "sbi-card", name: "SBI Card" },
   { slug: "icici-bank", name: "ICICI Bank" },
   { slug: "axis-bank", name: "Axis Bank" },
-  { slug: "hsbc", name: "HSBC" }
+  { slug: "hsbc", name: "HSBC" },
+  { slug: "au-small-finance-bank", name: "AU Small Finance Bank" }
 ];
 
 export const getBank = (slug: string) => banks.find((bank) => bank.slug === slug);

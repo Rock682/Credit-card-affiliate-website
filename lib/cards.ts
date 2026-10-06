@@ -193,6 +193,37 @@ export const cards: CreditCard[] = [
     loungeAccess: "4 complimentary railway lounge visits per year (1 per quarter), subject to the card terms.",
     description: "A RuPay credit card for regular IRCTC train travellers, with reward points on AC and chair-car tickets and UPI support.",
     affiliateUrl: "https://bitli.in/F8csBOi"
+  },
+  {
+    slug: "au-lit",
+    name: "AU LIT Credit Card",
+    issuer: "AU Small Finance Bank",
+    bank: "AU Small Finance Bank",
+    category: "Shopping & Lifestyle",
+    categories: ["shopping"],
+    annualFeeInr: 0,
+    joiningFeeInr: 0,
+    bestFor: "Customisable benefits and partner shopping discounts",
+    annualFee: "No joining or annual fee",
+    joiningFee: "No joining fee",
+    renewalWaiver: "No annual/renewal fee. Optional benefits you add to the card carry their own fee.",
+    reward: "Customisable card: you choose the benefits you want and pay a fee only for the features you add. Check AU Small Finance Bank's current feature list for reward rates.",
+    welcomeBenefit: "No separate welcome benefit is listed in the current offer summary.",
+    keyBenefits: [
+      "Lifetime free, with optional benefits you can add for a fee.",
+      "10% instant discount on Amazon orders above ₹5,000, up to ₹1,000 per month.",
+      "10% instant discount on Flipkart orders above ₹10,000, up to ₹1,500 per month.",
+      "Additional 10% off selected styles on Myntra on a minimum purchase of ₹3,999, up to ₹1,000.",
+      "15% instant discount on Tata CLiQ orders above ₹500, up to ₹300 per month.",
+      "10% off groceries on Blinkit app orders above ₹499, up to ₹100.",
+      "Partner discounts are promotional offers and can change or end at any time."
+    ],
+    eligibility: "Applicants aged 21–60, salaried or self-employed, with a minimum income of ₹25,000 per month, a credit score of 700 or more and no delayed payments in the last 12 months. You also need an existing credit card held for at least 6 months with a credit limit of at least ₹30,000. Approval is decided by AU Small Finance Bank.",
+    forexFee: "Check the current AU Small Finance Bank fee schedule before international use.",
+    loungeAccess: "No lounge benefit is listed in the current offer summary.",
+    description: "A lifetime-free, customisable card from AU Small Finance Bank: add only the benefits you want, plus partner shopping discounts.",
+    affiliateUrl: "https://bitli.in/Lu2R5lF",
+    isLifetimeFree: true
   }
 ];
 
