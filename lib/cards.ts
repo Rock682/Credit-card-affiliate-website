@@ -27,13 +27,17 @@ export type CreditCard = {
   forexFee: string;
   loungeAccess: string;
   description: string;
-  affiliateUrl?: string;
-  applicationUrl: string;
-  sourceUrl: string;
-  lastVerified: string;
   isFeatured?: boolean;
   isLifetimeFree?: boolean;
-};
+} & (
+  // At least one link is needed for the apply button.
+  | { affiliateUrl: string; applicationUrl?: string }
+  | { affiliateUrl?: string; applicationUrl: string }
+) & (
+  // Set both once the details have been checked against the issuer's own page.
+  | { sourceUrl: string; lastVerified: string }
+  | { sourceUrl?: undefined; lastVerified?: undefined }
+);
 
 export const cards: CreditCard[] = [
   {
@@ -159,6 +163,36 @@ export const cards: CreditCard[] = [
     sourceUrl: "https://www.icicibank.com/personal-banking/cards/credit-card/amazon-pay-credit-card/amazon-pay-faq",
     lastVerified: "2 October 2026",
     isLifetimeFree: true
+  },
+  {
+    slug: "sbi-irctc-rupay",
+    name: "IRCTC SBI RuPay Credit Card",
+    issuer: "SBI Card",
+    bank: "SBI Card",
+    category: "Travel (Railways)",
+    categories: ["travel"],
+    networks: ["RuPay"],
+    annualFeeInr: 500,
+    joiningFeeInr: 500,
+    bestFor: "IRCTC train ticket bookings",
+    annualFee: "₹500 + applicable taxes (from the second year)",
+    joiningFee: "₹500 + applicable taxes",
+    renewalWaiver: "No spend-based waiver listed; 500 reward points are credited when the renewal fee is paid.",
+    reward: "10% value back as reward points on AC1, AC2, AC3, AC Chair Car and Executive Chair Car bookings on IRCTC; 1 reward point per ₹125 on other eligible retail spends.",
+    welcomeBenefit: "350 reward points on a first spend of ₹500 or more within 45 days of card issuance.",
+    keyBenefits: [
+      "10% value back as reward points on eligible AC and chair-car bookings on IRCTC.",
+      "4 complimentary railway lounge visits per year (1 per quarter).",
+      "1% IRCTC transaction charge waiver on e-ticket bookings.",
+      "1% fuel surcharge waiver on transactions between ₹500 and ₹3,000, up to ₹100 per month.",
+      "500 reward points when the renewal fee is paid.",
+      "RuPay network, so the card can be linked to UPI apps for eligible payments."
+    ],
+    eligibility: "Applicants aged 21–65, salaried or self-employed, with a minimum income of ₹30,000 per month and a credit score of 650 or more with no delayed payments in the past 12 months. Applicants without a credit history are considered only if salaried. Approval is decided by SBI Card.",
+    forexFee: "Check the current SBI Card fee schedule before international use.",
+    loungeAccess: "4 complimentary railway lounge visits per year (1 per quarter), subject to the card terms.",
+    description: "A RuPay credit card for regular IRCTC train travellers, with reward points on AC and chair-car tickets and UPI support.",
+    affiliateUrl: "https://bitli.in/F8csBOi"
   }
 ];
 

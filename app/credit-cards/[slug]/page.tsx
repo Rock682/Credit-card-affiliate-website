@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { cards, getCard } from "@/lib/cards";
+import { SITE_URL } from "@/lib/site";
 
 export function generateStaticParams() {
   return cards.map((card) => ({ slug: card.slug }));
@@ -49,7 +50,7 @@ export default async function CardPage({
       "@type": "Organization",
       name: card.issuer
     },
-    url: card.applicationUrl
+    url: SITE_URL + "/credit-cards/" + card.slug
   };
 
   const faqJsonLd = {
@@ -79,7 +80,11 @@ export default async function CardPage({
                 <span className="card-kicker">{card.bank} · {card.category}</span>
                 <h1>{card.name}</h1>
                 <p className="card-lead">{card.description}</p>
-                <span className="verified-pill">✓ Verified {card.lastVerified}</span>
+                {card.lastVerified ? (
+                  <span className="verified-pill">✓ Verified {card.lastVerified}</span>
+                ) : (
+                  <span className="verified-pill">Not yet verified with issuer</span>
+                )}
               </div>
             </div>
 
@@ -130,9 +135,13 @@ export default async function CardPage({
             <section className="detail-source-box">
               <div>
                 <strong>Source & verification</strong>
-                <p>Key facts on this page were checked against the issuer information on {card.lastVerified}. Card terms can change, so confirm the current offer before applying.</p>
+                {card.sourceUrl ? (
+                  <p>Key facts on this page were checked against the issuer information on {card.lastVerified}. Card terms can change, so confirm the current offer before applying.</p>
+                ) : (
+                  <p>Key facts on this page come from the offer summary provided with the application link and have not yet been checked against {card.issuer}&apos;s own website. Confirm the current fees and terms on the application page before applying.</p>
+                )}
               </div>
-              <a href={card.sourceUrl} target="_blank" rel="noopener noreferrer">View issuer source ↗</a>
+              {card.sourceUrl && <a href={card.sourceUrl} target="_blank" rel="noopener noreferrer">View issuer source ↗</a>}
             </section>
 
             <section className="detail-disclosure">
@@ -167,9 +176,11 @@ export default async function CardPage({
             >
               {isAffiliate ? "Apply through this offer →" : "Check issuer offer →"}
             </a>
-            <a className="panel-secondary" href={card.sourceUrl} target="_blank" rel="noopener noreferrer">
-              Verify terms on issuer site
-            </a>
+            {card.sourceUrl && (
+              <a className="panel-secondary" href={card.sourceUrl} target="_blank" rel="noopener noreferrer">
+                Verify terms on issuer site
+              </a>
+            )}
             <div className="panel-note">Approval is decided by the card issuer.</div>
           </aside>
         </div>
