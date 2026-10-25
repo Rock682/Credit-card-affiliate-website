@@ -224,6 +224,37 @@ export const cards: CreditCard[] = [
     description: "A lifetime-free, customisable card from AU Small Finance Bank: add only the benefits you want, plus partner shopping discounts.",
     affiliateUrl: "https://bitli.in/Lu2R5lF",
     isLifetimeFree: true
+  },
+  {
+    slug: "idfc-first",
+    name: "IDFC FIRST Credit Card",
+    issuer: "IDFC FIRST Bank",
+    bank: "IDFC FIRST Bank",
+    category: "Rewards & Travel",
+    categories: ["travel"],
+    annualFeeInr: 0,
+    joiningFeeInr: 0,
+    bestFor: "Rewards on dining, travel and international spending",
+    annualFee: "No joining or annual fee",
+    joiningFee: "No joining fee",
+    renewalWaiver: "No annual/renewal fee.",
+    reward: "3X reward points on eligible online and offline spends up to ₹20,000 per statement cycle; 10X on dining, travel, international and birthday spends; 1X on utility, insurance, IDFC FASTag and railway transactions. Fuel, EMI and cash withdrawals earn no points. 1 reward point = ₹0.25.",
+    welcomeBenefit: "A ₹500 voucher (choice of partner brands) on spending ₹5,000 within 30 days of card activation, plus 5% cashback (up to ₹1,000) on your first EMI transaction within 30 days of activation.",
+    keyBenefits: [
+      "Lifetime free, with no joining or annual fee.",
+      "0% forex markup on international transactions.",
+      "10X reward points on dining, travel, international and birthday spends.",
+      "4 complimentary railway lounge visits per quarter (16 a year) when you spend ₹20,000 or more in the previous calendar month.",
+      "Complimentary roadside assistance worth ₹1,399, covering towing, flat tyres, battery jump-starts and emergency fuel delivery.",
+      "Reward points are valid for 24 months and can be redeemed for flights, hotels, vouchers and merchandise; a ₹99 + GST fee applies per redemption.",
+      "Up to 20% off at 1,500+ partner restaurants through the bank's dining programme."
+    ],
+    eligibility: "Applicants aged 21–65, salaried or self-employed, with a minimum income of ₹25,000 per month (salaried) or ₹3,00,000 per year (self-employed) and a credit score of 720 or more. Approval is decided by IDFC FIRST Bank.",
+    forexFee: "0% forex markup on international transactions.",
+    loungeAccess: "4 complimentary railway lounge visits per quarter (up to 16 a year), unlocked by spending ₹20,000 or more in the previous calendar month.",
+    description: "A lifetime-free IDFC FIRST Bank card with accelerated reward points on dining, travel and international spends, and no forex markup.",
+    affiliateUrl: "https://bitli.in/ZcRhNBM",
+    isLifetimeFree: true
   }
 ];
 
