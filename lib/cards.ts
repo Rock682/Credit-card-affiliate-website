@@ -352,6 +352,38 @@ export const cards: CreditCard[] = [
     description: "A lifetime-free YES Bank RuPay card with POPcoin rewards on online spends and POP UPI payments, redeemable for partner vouchers.",
     affiliateUrl: "https://bitli.in/HlfWwRE",
     isLifetimeFree: true
+  },
+  {
+    slug: "roarbank-rupay",
+    name: "RoarBank RuPay Credit Card",
+    issuer: "Unity Small Finance Bank",
+    bank: "Unity Small Finance Bank",
+    category: "Cashback",
+    categories: ["cashback"],
+    networks: ["RuPay"],
+    annualFeeInr: 0,
+    joiningFeeInr: 0,
+    bestFor: "Cashback on categories you choose, plus UPI payments",
+    annualFee: "No joining or annual fee",
+    joiningFee: "No joining fee",
+    renewalWaiver: "No annual/renewal fee.",
+    reward: "Up to 20% cashback on 2 categories you choose each month (you can change them monthly). Cashback is credited directly and can be used to pay your bill. Category caps are not listed in the current offer summary.",
+    welcomeBenefit: "No separate welcome benefit is listed in the current offer summary.",
+    keyBenefits: [
+      "Lifetime free, with no joining or renewal fee.",
+      "Up to 20% cashback on 2 categories you choose, changeable every month.",
+      "2-in-1 setup combining a savings account, a RuPay credit card and UPI payments.",
+      "A virtual card is issued once approved, with a credit limit of up to ₹3 lakh and up to 62 days of interest-free credit.",
+      "Up to 7% interest per year on the savings account.",
+      "Cashback is credited directly and can be used to pay your card bill.",
+      "Convert purchases into EMIs in the app."
+    ],
+    eligibility: "Applicants aged 21–65, either salaried with a minimum income of ₹25,000 per month or self-employed with an ITR above ₹3 lakh a year, and a credit score of 700 or more. Applicants without a credit history are not accepted. Approval is decided by Unity Small Finance Bank.",
+    forexFee: "Check the current RoarBank fee schedule before international use.",
+    loungeAccess: "No lounge benefit is listed in the current offer summary.",
+    description: "A lifetime-free RuPay credit card from RoarBank by Unity Small Finance Bank, combining a savings account, UPI payments and cashback on categories you pick.",
+    affiliateUrl: "https://bitli.in/mRJ6gIB",
+    isLifetimeFree: true
   }
 ];
 
