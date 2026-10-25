@@ -287,6 +287,39 @@ export const cards: CreditCard[] = [
     description: "A lifetime-free, FD-backed RuPay credit card from SBM Bank India through ZET, useful for building credit, with cashback on shopping and UPI payments.",
     affiliateUrl: "https://bitli.in/tq4AGft",
     isLifetimeFree: true
+  },
+  {
+    slug: "axis-neo-rupay",
+    name: "Axis Bank Neo RuPay Credit Card",
+    issuer: "Axis Bank",
+    bank: "Axis Bank",
+    category: "Shopping & Lifestyle",
+    categories: ["shopping"],
+    networks: ["RuPay", "Visa", "Mastercard"],
+    annualFeeInr: 0,
+    joiningFeeInr: 0,
+    bestFor: "Discounts on everyday lifestyle spending",
+    annualFee: "No joining or annual fee",
+    joiningFee: "No joining fee",
+    renewalWaiver: "No annual/renewal fee.",
+    reward: "Discount-led card: 10% off on Blinkit (up to ₹250 per month), 10% off BookMyShow movie tickets (up to ₹100 per month), ₹150 off on Myntra on spends above ₹999, plus other partner offers. No general reward rate is listed in the current offer summary.",
+    welcomeBenefit: "100% cashback up to ₹300 on your first utility bill payment within 30 days of card issuance.",
+    keyBenefits: [
+      "Lifetime free, with no joining or annual fee.",
+      "Choose your card network: RuPay, Visa or Mastercard.",
+      "10% off on Blinkit (up to ₹250 per month) and 10% off BookMyShow movie tickets (up to ₹100 per month).",
+      "₹150 off on Myntra on spends above ₹999.",
+      "₹120 off Zomato food delivery twice a month on orders above ₹499.",
+      "5% off mobile, broadband and DTH recharges via Paytm, up to ₹150 once a month on a minimum transaction of ₹299.",
+      "Wednesday offers: 15% off flights and hotels via MakeMyTrip, 10% off on Swiggy and up to ₹1,000 off on Tira.",
+      "Partner discounts are promotional offers and can change or end at any time."
+    ],
+    eligibility: "Applicants aged 21–65, either salaried with a minimum income of ₹25,000 per month or self-employed with an ITR above ₹3,60,000 a year, and a credit score of 736 or more. Applicants without a credit history are not accepted. Approval is decided by Axis Bank.",
+    forexFee: "Check the current Axis Bank fee schedule before international use.",
+    loungeAccess: "No lounge benefit is listed in the current offer summary.",
+    description: "A lifetime-free Axis Bank card for everyday lifestyle spending, with partner discounts on groceries, food delivery, movies and shopping.",
+    affiliateUrl: "https://bitli.in/J5G49My",
+    isLifetimeFree: true
   }
 ];
 
