@@ -384,6 +384,37 @@ export const cards: CreditCard[] = [
     description: "A lifetime-free RuPay credit card from RoarBank by Unity Small Finance Bank, combining a savings account, UPI payments and cashback on categories you pick.",
     affiliateUrl: "https://bitli.in/mRJ6gIB",
     isLifetimeFree: true
+  },
+  {
+    slug: "scapia",
+    name: "Scapia Co-Branded Credit Card",
+    issuer: "Axis Bank",
+    bank: "Axis Bank",
+    category: "Travel",
+    categories: ["travel"],
+    annualFeeInr: 0,
+    joiningFeeInr: 0,
+    bestFor: "Travel bookings, international spending and domestic lounge access",
+    annualFee: "No joining or annual fee",
+    joiningFee: "No joining fee",
+    renewalWaiver: "No annual/renewal fee.",
+    reward: "20 Scapia Coins per ₹100 on flight and hotel bookings made through the Scapia app, and 10 Scapia Coins per ₹100 on most online and offline spends. 5 Scapia Coins = ₹1, redeemable on the Scapia app for up to 100% of the value of flight, stay, train or bus bookings.",
+    welcomeBenefit: "No separate welcome benefit is listed in the current offer summary.",
+    keyBenefits: [
+      "Lifetime free, with no joining or annual fee.",
+      "Zero forex markup on international transactions.",
+      "Unlimited domestic lounge access, plus complimentary dining, shopping or spa benefits, when you spend ₹20,000 on the card each month.",
+      "20 Scapia Coins per ₹100 on flights and hotels booked through the Scapia app.",
+      "10 Scapia Coins per ₹100 on most online and offline spends.",
+      "Redeem coins on the Scapia app for flights, stays, trains or buses (5 Scapia Coins = ₹1).",
+      "Issued by Axis Bank or Bank of Baroda in partnership with Scapia."
+    ],
+    eligibility: "Applicants aged 23–40, either salaried with a minimum income of ₹30,000 per month or self-employed with at least ₹4,00,000 a year, and a credit score of 730 or more. Applicants without a credit history are not accepted. The card is issued by Axis Bank or Bank of Baroda, and approval is subject to the issuing bank's policies.",
+    forexFee: "Zero forex markup on international transactions.",
+    loungeAccess: "Unlimited domestic lounge access when you spend ₹20,000 or more on the card each month.",
+    description: "A lifetime-free travel card from Scapia, issued with Axis Bank or Bank of Baroda, with zero forex markup, travel rewards and spend-based domestic lounge access.",
+    affiliateUrl: "https://bitli.in/3o33ckx",
+    isLifetimeFree: true
   }
 ];
 
