@@ -320,6 +320,38 @@ export const cards: CreditCard[] = [
     description: "A lifetime-free Axis Bank card for everyday lifestyle spending, with partner discounts on groceries, food delivery, movies and shopping.",
     affiliateUrl: "https://bitli.in/J5G49My",
     isLifetimeFree: true
+  },
+  {
+    slug: "yes-bank-pop-club",
+    name: "YES Bank POP-Club RuPay Credit Card",
+    issuer: "YES Bank",
+    bank: "YES Bank",
+    category: "Shopping & Rewards",
+    categories: ["shopping"],
+    networks: ["RuPay"],
+    annualFeeInr: 0,
+    joiningFeeInr: 0,
+    bestFor: "Online shopping and UPI rewards",
+    annualFee: "No joining or annual fee",
+    joiningFee: "No joining fee",
+    renewalWaiver: "No annual/renewal fee.",
+    reward: "10 POPcoins per ₹100 spent online and 2 POPcoins per ₹100 spent offline, plus an extra 5% POPcoins on POP UPI payments made with the card. POPcoins can be redeemed for vouchers from Zomato, Blinkit, Cleartrip and PharmEasy; the value of a POPcoin is not listed in the current offer summary.",
+    welcomeBenefit: "On card activation: a ₹750 Cleartrip voucher, a 3-month Zomato Gold Mini membership, a 6-month PharmEasy Plus membership and 500 POPcoins.",
+    keyBenefits: [
+      "Lifetime free, with no joining or annual fee.",
+      "10 POPcoins per ₹100 spent online and 2 POPcoins per ₹100 spent offline.",
+      "Extra 5% POPcoins on POP UPI payments made with the card.",
+      "Joining benefits worth a ₹750 Cleartrip voucher, Zomato Gold Mini (3 months), PharmEasy Plus (6 months) and 500 POPcoins.",
+      "1,500 extra POPcoins on annual spends of ₹1.5 lakh.",
+      "Redeem POPcoins for vouchers from Zomato, Blinkit, Cleartrip and PharmEasy.",
+      "1% fuel surcharge waiver."
+    ],
+    eligibility: "Applicants aged 21–60, salaried or self-employed, with a CIBIL score of 730 or more. You need an existing credit card from another bank with a limit of at least ₹50,000, held for at least 6 months; no income documents are needed because approval is based on that card. Applicants without a credit history are not accepted. Approval is decided by YES Bank.",
+    forexFee: "Check the current YES Bank fee schedule before international use.",
+    loungeAccess: "No lounge benefit is listed in the current offer summary.",
+    description: "A lifetime-free YES Bank RuPay card with POPcoin rewards on online spends and POP UPI payments, redeemable for partner vouchers.",
+    affiliateUrl: "https://bitli.in/HlfWwRE",
+    isLifetimeFree: true
   }
 ];
 
