@@ -255,6 +255,38 @@ export const cards: CreditCard[] = [
     description: "A lifetime-free IDFC FIRST Bank card with accelerated reward points on dining, travel and international spends, and no forex markup.",
     affiliateUrl: "https://bitli.in/ZcRhNBM",
     isLifetimeFree: true
+  },
+  {
+    slug: "sbm-zet",
+    name: "SBM ZET Credit Card",
+    issuer: "SBM Bank India",
+    bank: "SBM Bank India",
+    category: "Secured (FD-backed) & Cashback",
+    categories: ["cashback", "shopping"],
+    networks: ["RuPay"],
+    annualFeeInr: 0,
+    joiningFeeInr: 0,
+    bestFor: "Building credit with a fixed deposit, plus shopping and UPI cashback",
+    annualFee: "No joining or annual fee",
+    joiningFee: "No joining fee",
+    renewalWaiver: "No annual/renewal fee.",
+    reward: "5% cashback on Amazon and Flipkart, and up to 15% on Nykaa, Domino's and 80+ brand vouchers; cashback can be transferred to your bank account. 2% cashback on UPI payments via ZET with a ₹99 monthly subscription, capped at ₹500 per month.",
+    welcomeBenefit: "No separate welcome benefit is listed in the current offer summary.",
+    keyBenefits: [
+      "Lifetime free, with no joining or renewal fee.",
+      "Secured by a fixed deposit, so no income proof is needed; approval is still decided by the bank.",
+      "5% cashback on Amazon and Flipkart, and up to 15% on Nykaa, Domino's and 80+ brand vouchers.",
+      "2% cashback on UPI payments via ZET with a ₹99 monthly subscription, capped at ₹500 per month.",
+      "Up to 20% off on Swiggy, Zomato, Instamart, BookMyShow and more (up to ₹100, once per month per partner).",
+      "Up to 7% interest on the fixed deposit; bank deposits are insured by DICGC up to ₹5 lakh per bank.",
+      "Up to 45 days of interest-free credit."
+    ],
+    eligibility: "Applicants aged 21–65 with a fixed deposit of at least ₹2,000, which secures the card. No income proof is needed because the card is backed by your FD. Approval is decided by SBM Bank India.",
+    forexFee: "Check the current SBM Bank India fee schedule before international use.",
+    loungeAccess: "No lounge benefit is listed in the current offer summary.",
+    description: "A lifetime-free, FD-backed RuPay credit card from SBM Bank India through ZET, useful for building credit, with cashback on shopping and UPI payments.",
+    affiliateUrl: "https://bitli.in/tq4AGft",
+    isLifetimeFree: true
   }
 ];
 
