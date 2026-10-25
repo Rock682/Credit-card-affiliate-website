@@ -448,6 +448,40 @@ export const cards: CreditCard[] = [
     description: "A lifetime-free Uni RuPay card that pays rewards as 24K digital gold, with accelerated rewards on Uni Store vouchers and travel, and zero forex markup.",
     affiliateUrl: "https://bitli.in/1cWyeVZ",
     isLifetimeFree: true
+  },
+  {
+    slug: "hdfc-pixel-play",
+    name: "HDFC Bank Pixel Play Credit Card",
+    issuer: "HDFC Bank",
+    bank: "HDFC Bank",
+    category: "Cashback",
+    categories: ["cashback", "shopping"],
+    networks: ["Visa", "RuPay"],
+    annualFeeInr: 0,
+    joiningFeeInr: 0,
+    bestFor: "Cashback on brands and e-commerce platforms you choose",
+    annualFee: "No joining or annual fee",
+    joiningFee: "No joining fee",
+    renewalWaiver: "No annual/renewal fee.",
+    reward: "5% cashback on any 2 brand packs you choose and 3% on one e-commerce platform you choose (each capped at 500 cash points per month), plus 1% unlimited cashback on other eligible spends. Fuel, rent, EMI, e-wallet loading and government transactions are excluded from the 1%.",
+    welcomeBenefit: "No separate welcome benefit is listed in the current offer summary.",
+    keyBenefits: [
+      "Lifetime free, with no joining or renewal fee.",
+      "5% cashback on any 2 brand packs, capped at 500 cash points per month per pack: Dining & Entertainment (BookMyShow, Zomato), Travel (MakeMyTrip, Uber), Grocery (Blinkit, Reliance Smart Bazaar), Electronics (Croma, Reliance Digital) or Fashion (Nykaa, Myntra).",
+      "3% cashback on one e-commerce platform of your choice (Amazon, Flipkart or PayZapp), capped at 500 cash points per month.",
+      "1% unlimited cashback on other spends, excluding fuel, rent, EMI, e-wallet loading and government transactions.",
+      "5% cashback on SmartBuy flights, hotels, bus, rail, IGP, instant vouchers and Apple Imagine Tresor, capped at 500 cash points per month.",
+      "1% cashback on UPI spends with the Pixel RuPay variant, capped at 500 cash points per month.",
+      "1% fuel surcharge waiver on transactions between ₹400 and ₹5,000, up to ₹250 per statement cycle.",
+      "Up to 25% off restaurant bills via Swiggy Dineout on the Swiggy app, up to ₹300 per month.",
+      "Managed digitally through the PayZapp app, including flexible billing."
+    ],
+    eligibility: "Applicants aged 21–65, either salaried with a minimum income of ₹25,000 per month or self-employed with at least ₹50,000 per month, and a credit score of 750 or more. An FD-backed variant is also available with a minimum deposit of ₹50,000. Approval is decided by HDFC Bank.",
+    forexFee: "Check the current HDFC Bank fee schedule before international use.",
+    loungeAccess: "No lounge benefit is listed in the current offer summary.",
+    description: "A lifetime-free, app-based HDFC Bank card with cashback on brand packs and an e-commerce platform you choose, managed through PayZapp.",
+    affiliateUrl: "https://bitli.in/I88zLZ1",
+    isLifetimeFree: true
   }
 ];
 
