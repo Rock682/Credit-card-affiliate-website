@@ -415,6 +415,39 @@ export const cards: CreditCard[] = [
     description: "A lifetime-free travel card from Scapia, issued with Axis Bank or Bank of Baroda, with zero forex markup, travel rewards and spend-based domestic lounge access.",
     affiliateUrl: "https://bitli.in/3o33ckx",
     isLifetimeFree: true
+  },
+  {
+    slug: "uni-goldx",
+    name: "Uni GoldX Credit Card",
+    issuer: "Uni Cards",
+    bank: "Uni Cards",
+    category: "Rewards & Travel",
+    categories: ["cashback", "travel"],
+    networks: ["RuPay"],
+    annualFeeInr: 0,
+    joiningFeeInr: 0,
+    bestFor: "Gold rewards, travel bookings and international spending",
+    annualFee: "No joining or annual fee",
+    joiningFee: "No joining fee",
+    renewalWaiver: "No annual/renewal fee.",
+    reward: "1% back on eligible online and offline spends, credited as Uni Coins that can be converted into 24K digital gold or redeemed for physical gold coins via the Uni platform. Up to 8% back on brand vouchers bought through Uni Store, 7% back on flights and hotels booked through Uni, and 1% back on eligible UPI Scan & Pay payments with the RuPay variant.",
+    welcomeBenefit: "No separate welcome benefit is listed in the current offer summary.",
+    keyBenefits: [
+      "Lifetime free, with no joining or renewal fee.",
+      "1% back as Uni Coins, convertible into 24K digital gold or physical gold coins.",
+      "Up to 8% back on brand vouchers bought through Uni Store, including Amazon, Myntra, Zomato, Blinkit, MakeMyTrip, Swiggy and Cleartrip.",
+      "Zero forex markup on eligible international transactions in 180+ countries.",
+      "7% back on domestic and international flights booked through Uni Store, with no cap or minimum spend, and 7% back on hotels booked through Uni's travel partner.",
+      "50% back on one PVR or INOX booking a month through Uni Store, up to ₹250, when you spend ₹10,000 that month.",
+      "1% back on eligible UPI Scan & Pay payments with the RuPay variant linked to supported UPI apps.",
+      "1% fuel surcharge waiver on transactions between ₹400 and ₹5,000, up to ₹500 per statement cycle."
+    ],
+    eligibility: "Applicants aged 25–50, either salaried with a minimum income of ₹25,000 per month or self-employed with an ITR above ₹7,50,000 a year, and a credit score of 700 or more. Uni issues its cards with partner banks; the issuing bank is not named in the current offer summary and makes the approval decision.",
+    forexFee: "Zero forex markup on eligible international transactions in 180+ countries.",
+    loungeAccess: "No lounge benefit is listed in the current offer summary.",
+    description: "A lifetime-free Uni RuPay card that pays rewards as 24K digital gold, with accelerated rewards on Uni Store vouchers and travel, and zero forex markup.",
+    affiliateUrl: "https://bitli.in/1cWyeVZ",
+    isLifetimeFree: true
   }
 ];
 
